@@ -21,14 +21,14 @@ const Header = () => {
     return (
         <div className="fixed z-50 h-fit flex flex-row justify-between items-center w-full px-24 py-12">
             <Link to="/">
-                <div className="flex flex-row gap-3 items-center text-4xl font-medium">
+                <div className="flex flex-row gap-3 items-center text-white text-4xl font-medium">
                     <FaPlay className="text-indigo-500 scale-105" />
                     <p>
                         Movie Noir
                     </p>
                 </div>
             </Link>
-            <ul className="flex flex-row gap-6 text-2xl font-semibold">
+            <ul className="flex flex-row gap-6 text-white text-2xl font-semibold">
                 {headerLinks.map((link, index) => {
                     return (
                         <li key={index}>
