@@ -43,7 +43,12 @@ const HeroSlider = () => {
         }
 
         if (data) {
-            SetMovies(data.results.slice(0, 5));
+            const movies = data.results.filter((movie) => {
+                return movie.backdrop_path != null &&
+                    movie.poster_path != null &&
+                    movie.overview != "";
+            });
+            SetMovies(movies.slice(0, 1));
         }
     }, [data, error]);
 
