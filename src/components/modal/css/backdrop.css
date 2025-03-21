@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.backdrop {
+  @apply fixed top-0 left-0;
+  @apply w-full h-screen bg-black/70;
+  @apply transition-all duration-700;
+  @apply !z-80;
+}
+
+.backdrop.backdrop-hidden {
+    @apply !opacity-0;
+}
+
+.backdrop.backdrop-visible {
+    @apply !opacity-100;
+}
