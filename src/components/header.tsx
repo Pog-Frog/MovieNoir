@@ -19,7 +19,8 @@ const Header = () => {
     ]
 
     return (
-        <div className="fixed z-50 h-fit flex flex-row justify-between items-center w-full px-24 py-12">
+        // TODO: Decrease the padding of the header
+        <div className="fixed z-50 h-fit flex flex-row justify-between items-center w-full px-24 py-12 outline-none border-none">
             <Link to="/">
                 <div className="flex flex-row gap-3 items-center text-white text-4xl font-medium">
                     <FaPlay className="text-indigo-500 scale-105" />
