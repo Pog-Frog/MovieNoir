@@ -2,10 +2,15 @@ import { Outlet } from "react-router";
 import Header from "../components/header";
 
 const RootLayout = () => {
+    
     return (
         <>
-            <Header />
-            <Outlet />
+            <div className="flex flex-col h-screen">
+                <Header />
+                <div className="flex flex-col"> {/* // md:pt-32 pt-36 */}
+                    <Outlet />
+                </div>
+            </div>
         </>
     );
 }
