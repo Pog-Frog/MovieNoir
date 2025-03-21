@@ -5,7 +5,7 @@ const RootLayout = () => {
     
     return (
         <>
-            <div className="flex flex-col h-screen">
+            <div className="flex flex-col min-h-screen">
                 <Header />
                 <div className="flex flex-col"> {/* // md:pt-32 pt-36 */}
                     <Outlet />
