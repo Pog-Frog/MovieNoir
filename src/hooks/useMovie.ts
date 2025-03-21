@@ -5,7 +5,7 @@ import config from '../api/config';
 
 type MovieOption = "trailer";
 
-const useMovie = (option: MovieOption = "trailer", id: number) => {
+const useMovie = (id: number, option: MovieOption = "trailer") => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);
 
     let url = "";
