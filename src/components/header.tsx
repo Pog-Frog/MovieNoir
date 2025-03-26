@@ -1,7 +1,7 @@
 import { FaPlay } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import { Spin as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Header = () => {
@@ -22,13 +22,30 @@ const Header = () => {
     ]
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [shrinkHeader, setShrinkHeader] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                setShrinkHeader(true);
+            } else {
+                setShrinkHeader(false);
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }, []);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
 
     return (
-        <div className="sticky top-0 left-0 right-0 z-50 w-full bg-black px-4 py-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+        <div className={`sticky top-0 left-0 right-0 z-50 w-full px-4 py-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 ${ shrinkHeader ? "bg-black" : "bg-transparent"}`}>
             <div className="mx-auto flex h-full max-w-screen-2xl items-center justify-between">
                 {/* Logo */}
                 <Link
