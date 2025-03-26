@@ -2,12 +2,15 @@ import "./css/backdrop.css";
 
 interface BackdropProps {
     className?: string,
-    onClose: React.MouseEventHandler<HTMLDivElement>
+    onClose: React.MouseEventHandler<HTMLDivElement>,
+    children?: React.ReactNode
 }
 
-const Backdrop: React.FC<BackdropProps> = ({ className, onClose }) => {
+const Backdrop: React.FC<BackdropProps> = ({ className, children, onClose }) => {
     return (
-        <div className={className}/>
+        <div className={className} onClick={onClose}>
+            {children}
+        </div>
     );
 }
 

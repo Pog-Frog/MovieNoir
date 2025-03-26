@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 .backdrop {
-  @apply fixed top-0 left-0;
-  @apply w-full h-screen bg-black/70;
+  @apply fixed top-0 left-0 flex items-center justify-center;
+  @apply w-full h-screen bg-black/50 backdrop-blur-sm;
   @apply transition-all duration-700;
   @apply !z-80;
 }

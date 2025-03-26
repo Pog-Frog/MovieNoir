@@ -49,13 +49,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, className }) =
 
     return (
         <>
-            <Backdrop className={backdropClass} onClose={closeModal} />
-            <div className={modalClass}>
-                <RiCloseLine className="modal-close-icon" onClick={closeModal} />
-                <div className="p-6 md:p-10">
-                    {children}
+            <Backdrop className={backdropClass} onClose={closeModal}>
+                <div className={modalClass}>
+                    <RiCloseLine className="modal-close-icon" onClick={closeModal} />
+                    <div className="p-6 md:p-10">
+                        {children}
+                    </div>
                 </div>
-            </div>
+            </Backdrop>
+
         </>
     );
 }
