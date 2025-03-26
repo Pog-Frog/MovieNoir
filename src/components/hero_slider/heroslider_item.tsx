@@ -58,7 +58,7 @@ const HeroSliderItem: React.FC<props> = ({ movie, isActive, pauseSwiper, resumeS
                 <div className="section_container z-5 absolute top-1/2 flex flex-row items-center gap-16 -translate-y-1/2 w-full justify-between mt-[2rem]">
                     <div className="flex flex-col gap-3 md:gap-5">
                         <h2
-                            className={`text-2xl sm:text-3xl md:text-5xl text-white font-medium opacity-0 -translate-y-full transition duration-700 ${isActive && "!opacity-100 !translate-y-0"
+                            className={`text-2xl sm:text-2xl md:text-3xl text-white font-medium opacity-0 -translate-y-full transition duration-700 ${isActive && "!opacity-100 !translate-y-0"
                                 }`}
                         >
                             {movie.title}
@@ -70,18 +70,18 @@ const HeroSliderItem: React.FC<props> = ({ movie, isActive, pauseSwiper, resumeS
                             {overview}
                         </div>
                         <div
-                            className={`flex flex-col sm:flex-row gap-5 sm:gap-3 opacity-0 -translate-y-1/2 transition duration-700 delay-[600ms] ${isActive && "!opacity-100 !translate-y-0"
+                            className={`flex flex-row gap-5 sm:gap-3 opacity-0 -translate-y-1/2 transition duration-700 delay-[600ms] ${isActive && "!opacity-100 !translate-y-0"
                                 }`}
                         >
                             <button
-                                className="w-fit px-8 py-1.5 bg-indigo-700 text-base md:text-lg text-white font-medium rounded-3xl"
+                                className="w-fit px-4 md:px-8 py-1.5 bg-indigo-700 text-base md:text-lg text-white font-medium rounded-3xl"
                                 onClick={() => { }}
                             >
                                 {/* TODO: Add more info option */}
                                 More info
                             </button>
                             <button
-                                className="hidden md:block w-fit px-8 py-1.5 border-2 border-white text-lg text-white font-medium rounded-3xl" type="button"
+                                className="w-fit px-4 md:px-8 py-1.5 border-2 border-white text-base md:text-lg text-white font-medium rounded-3xl hover:cursor-pointer hover:-translate-y-0.5" type="button"
                                 onClick={() => openTrailerModal()}
                             >
                                 Watch trailer

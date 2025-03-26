@@ -38,7 +38,7 @@ const HeroTrailerModal: React.FC<HeroTrailerModalProps> = ({ movieId, IsOpen, cl
     }
 
     return (
-        <Modal isOpen={IsOpen} onClose={closeModal} className="w-[90%] md:w-[80%]">
+        <Modal isOpen={IsOpen} onClose={closeModal} className="w-[100%] md:w-[80%]">
             <iframe
             className="w-full aspect-video md:aspect-[7/3]"
             title="trailer"

@@ -31,7 +31,7 @@ const Header = () => {
         <div className="fixed top-0 z-5 w-full px-6 sm:px-10 md:px-16 lg:px-28 py-6 bg-black ">
             <div className="w-full h-full m-auto flex flex-row items-center justify-between">
                 <Link to="/" className="shrink-0 relative z-[100] h-auto w-auto flex flex-row items-center">
-                    <div className="flex flex-row gap-3 items-center text-white text-4xl font-medium">
+                    <div className="flex flex-row gap-3 items-center text-white text-3xl md:text-4xl font-medium">
                         <FaPlay className="text-indigo-500 scale-105" />
                         <span>
                             Movie Noir
