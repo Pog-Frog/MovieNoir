@@ -52,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, className }) =
             <Backdrop className={backdropClass} onClose={closeModal}>
                 <div className={modalClass}>
                     <RiCloseLine className="modal-close-icon" onClick={closeModal} />
-                    <div className="p-6 md:p-10">
+                    <div className="p-6 md:p-10 w-[100%] h-[100%] overflow-y-auto">
                         {children}
                     </div>
                 </div>

@@ -29,21 +29,22 @@ const HeroTrailerModal: React.FC<HeroTrailerModalProps> = ({ movieId, IsOpen, cl
         close();
     }
 
-    if (isLoading) {
-        return (
-            <Modal isOpen={IsOpen} onClose={closeModal} className="flex noBg w-[90%] h-[70%] items-center justify-center">
-                <ClipLoader color="#ffffff" loading={true} size={100} />
-            </Modal>
-        );
-    }
-
     return (
-        <Modal isOpen={IsOpen} onClose={closeModal} className="w-[100%] md:w-[80%]">
-            <iframe
-            className="w-full aspect-video md:aspect-[7/3]"
-            title="trailer"
-            src={videoSRC}
-            ></iframe>
+        <Modal isOpen={IsOpen} onClose={closeModal} className="w-[100%] md:w-[70%] min-h-[40vh] flex items-center justify-center">
+            {(isLoading || !videoSRC) ? (
+                <div className="flex items-center justify-center h-[40vh]">
+                    <ClipLoader color="#ffffff" loading={true} size={100} />
+                </div>
+            ) :
+                (
+                    <iframe
+                        className="w-full aspect-video md:aspect-[7/3]"
+                        title="trailer"
+                        src={videoSRC}
+                    ></iframe>
+                )
+            }
+            
         </Modal>
     );
 }
