@@ -12,6 +12,12 @@ const HomePage = () => {
                     category="movie"
                     type="popular"
                 />
+                <SwiperList
+                    title="Upcoming Movies"
+                    link="/movies/upcoming"
+                    category="movie"
+                    type="upcoming"
+                />
             </div>
         </>
     );
