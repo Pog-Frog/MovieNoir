@@ -9,7 +9,16 @@ import { SeriesOption } from './useSeries';
 
 const useItems = (category: CategoriesTypes, option: MovieOption | SeriesOption, page: number = 1) => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);
-    const { data, error, isLoading, mutate } = useSWR<MoviesResponse | SeriesResponse>(`${config.baseUrl}${category}/${option}?page=${page}&api_key=${config.apiKey}`, fetcher);
+    
+    let url: string = '';
+    
+    if (option === "trending" && category === "tv") {
+        url = `${config.baseUrl}${option}/${category}/day?api_key=${config.apiKey}`;
+    } else {
+        url = `${config.baseUrl}${category}/${option}?page=${page}&api_key=${config.apiKey}`;
+    }
+    
+    const { data, error, isLoading, mutate } = useSWR<MoviesResponse | SeriesResponse>(url, fetcher);
 
     return {
         data,
