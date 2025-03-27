@@ -18,3 +18,7 @@ body {
 .section_container {
   @apply px-6 sm:px-10 md:px-20 lg:px-24;
 }
+
+.movie-list-swiper .swiper-slide {
+  @apply w-fit;
+}
