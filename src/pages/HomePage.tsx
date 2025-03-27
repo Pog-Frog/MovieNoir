@@ -24,6 +24,12 @@ const HomePage = () => {
                     category="tv"
                     type="trending"
                 />
+                <SwiperList
+                    title="TV Series Airing Today"
+                    link="/tv-series/airing-today"
+                    category="tv"
+                    type="airing_today"
+                />
             </div>
         </>
     );
