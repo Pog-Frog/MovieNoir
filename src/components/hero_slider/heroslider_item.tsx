@@ -74,14 +74,14 @@ const HeroSliderItem: React.FC<props> = ({ movie, isActive, pauseSwiper, resumeS
                                 }`}
                         >
                             <button
-                                className="w-fit px-4 md:px-8 py-1.5 bg-indigo-700 text-base md:text-lg text-white font-medium rounded-3xl"
+                                className="w-fit px-4 md:px-8 py-1.5 gradient_button_1 text-base md:text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer"
                                 onClick={() => { }}
                             >
                                 {/* TODO: Add more info option */}
                                 More info
                             </button>
                             <button
-                                className="w-fit px-4 md:px-8 py-1.5 border-2 border-white text-base md:text-lg text-white font-medium rounded-3xl hover:cursor-pointer hover:-translate-y-0.5" type="button"
+                                className="w-fit px-4 md:px-8 py-1.5 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold rounded-full hover:from-purple-700 hover:to-blue-600 transition duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer"
                                 onClick={() => openTrailerModal()}
                             >
                                 Watch trailer

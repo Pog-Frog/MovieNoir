@@ -22,3 +22,41 @@ body {
 .movie-list-swiper .swiper-slide {
   @apply w-fit;
 }
+
+.gradient_button_1 {
+  position: relative;
+  color: #4a5568;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.gradient_button_1::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+  z-index: -1;
+  border-radius: 9999px;
+}
+
+.gradient_button_1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  margin: 2px;
+  border-radius: 9999px;
+  z-index: -1;
+}
+
+.gradient_button_1:hover {
+  color: #2d3748;
+}
