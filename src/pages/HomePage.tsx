@@ -18,6 +18,12 @@ const HomePage = () => {
                     category="movie"
                     type="upcoming"
                 />
+                <SwiperList
+                    title="Trending TV Series"
+                    link="/tv-series/trending"
+                    category="tv"
+                    type="trending"
+                />
             </div>
         </>
     );
