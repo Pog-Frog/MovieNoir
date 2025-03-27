@@ -19,7 +19,7 @@ const SwiperList: React.FC<SwiperListProps> = ({ title, type, category, link, id
 
     return (
         <>
-            <div className="flex flex-col gap-3 md:gap-5">
+            <div className="flex flex-col gap-3 md:gap-5 select-none">
                 <div className="flex flex-row flex-wrap items-center justify-between">
                     <h2 className="text-lg md:text-2xl text-white font-medium">{title}</h2>
                     {!isLoading && link && (
