@@ -13,17 +13,13 @@ const useItem = (category: CategoriesTypes, id: number, options: ItemOption = ""
     let url: string = '';
 
     if (category === "movie") {
-        if (options === "similar") {
-            url = `${config.baseUrl}movie/${id}/similar?api_key=${config.apiKey}`;
-        } else if (options === "trailer") {
+        if (options === "trailer") {
             url = `${config.baseUrl}movie/${id}/videos?api_key=${config.apiKey}`;
         } else {
             url = `${config.baseUrl}movie/${id}?api_key=${config.apiKey}`;
         }
     } else {
-        if (options === "similar") {
-            url = `${config.baseUrl}tv/${id}/similar?api_key=${config.apiKey}`;
-        } else if (options === "trailer") {
+        if (options === "trailer") {
             url = `${config.baseUrl}tv/${id}/videos?api_key=${config.apiKey}`;
         } else {
             url = `${config.baseUrl}tv/${id}?api_key=${config.apiKey}`;
