@@ -9,6 +9,7 @@ import { dateFormatter } from "../utils/dateFormatter";
 import { timeFormatter } from "../utils/timeFormatter";
 import Movie from "../interfaces/movie.interface";
 import Series from "../interfaces/series.interface";
+import ItemCast from "../components/item/item_cast";
 
 const DetailsPage = () => {
     const navigate = useNavigate();
@@ -103,7 +104,7 @@ const DetailsPage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                    <ItemCast />
                                 </div>
                             </div>
                         </div>
