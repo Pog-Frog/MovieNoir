@@ -40,13 +40,13 @@ const DetailsPage = () => {
             ) : (
                 <>
                     <div className="relative h-[65vh] bg-cover bg-center" style={{ backgroundImage: item?.backdrop_path || item?.poster_path ? `url(${config.originalImage(item?.backdrop_path || item?.poster_path)})` : "" }}>
-                        <div className="absolute inset-0 z-30 2-full bg-black/10">
+                        <div className="absolute inset-0 z-20 w-full bg-black/10">
                         </div>
-                        <div className="absolute inset-0 z-20 w-full h-full" style={{ backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)" }}>
+                        <div className="absolute inset-0 z-10 w-full h-full" style={{ backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)" }}>
                         </div>
                     </div>
                     <div className="page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
-                        <div className="z-50 -mt-[30rem] flex flex-row justify-center gap-10">
+                        <div className="z-30 -mt-[30rem] flex flex-row justify-center gap-10">
                             <img src={config.originalImage(item?.poster_path || item?.backdrop_path || "")} alt={item?.title || item?.name} className="h-[480px] w-[300px] hidden lg:block bg-contain bg-no-repeat rounded-lg" />
                             <div className="max-w-4xl flex flex-col gap-8 min-w-[55%]">
                                 <div className="flex flex-col gap-5">
