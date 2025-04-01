@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Movie from "../../interfaces/movie.interface";
 import config from "../../api/config";
 import HeroTrailerModal from "./hero_trailer_modal"
+import { useNavigate } from "react-router";
 
 interface props {
     movie: Movie;
@@ -15,6 +16,8 @@ const HeroSliderItem: React.FC<props> = ({ movie, isActive, pauseSwiper, resumeS
     const [overview, setOverview] = useState(movie.overview);
 
     const [HeroTrailerModalIsOpen, setHeroTrailerModalIsOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleResize = () => {
@@ -75,9 +78,8 @@ const HeroSliderItem: React.FC<props> = ({ movie, isActive, pauseSwiper, resumeS
                         >
                             <button
                                 className="w-fit px-4 md:px-8 py-1.5 gradient_button_1 text-base md:text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer"
-                                onClick={() => { }}
+                                onClick={() => navigate(`/movie/${movie.id}`)}
                             >
-                                {/* TODO: Add more info option */}
                                 More info
                             </button>
                             <button
