@@ -33,7 +33,7 @@ const ItemCast = () => {
     return (
         <div className="flex flex-col gap-3">
             <h2 className="text-3xl text-white">Cast</h2>
-            <div className="flex flex-row flex-wrap gap-3">
+            <div className="flex flex-row flex-wrap gap-8 items-center justify-center md:justify-start">
                 {isLoading ? (
                     <div className="flex justify-center items-center w-full h-32">
                         <ClipLoader color="#ffffff" loading={true} size={30} />
