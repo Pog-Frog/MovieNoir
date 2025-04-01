@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from '../api/config';
 import { MoviesResponse } from '../interfaces/movie_response.interface';
 
-export type MovieOption = "popular" | "top_rated" | "upcoming" | "now_playing";
+export type MovieOption = "popular" | "top_rated" | "upcoming" | "now_playing" | "similar";
 
 const useMovies = (option: MovieOption = "popular", page: number = 1) => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from '../api/config';
 import { SeriesResponse } from '../interfaces/series_response.interface';
 
-export type SeriesOption = "popular" | "top_rated" | "on_the_air" | "airing_today" | "trending";
+export type SeriesOption = "popular" | "top_rated" | "on_the_air" | "airing_today" | "trending" | "similar";
 
 const useSeries = (option: SeriesOption = "popular", page: number = 1) => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);
