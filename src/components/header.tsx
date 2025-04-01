@@ -27,7 +27,7 @@ const Header = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                setShrinkHeader("md:!py-4 bg-opacity-100");
+                setShrinkHeader("md:!py-4 bg-opacity-100 backdrop-blur-sm shadow-lg");
             } else {
                 setShrinkHeader("");
             }
