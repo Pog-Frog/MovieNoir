@@ -26,7 +26,7 @@ interface SwiperListItemsProps {
 
 const SwiperListItems: React.FC<SwiperListItemsProps> = ({ id, category, type, setSwiperLoading }) => {
     const [items, setItems] = useState<(Movie | Series)[]>([]);
-    const { data, error, isLoading } = useItems(category, type);
+    const { data, error, isLoading } = useItems(id, category, type);
 
     useEffect(() => {
         if (error) {
@@ -51,19 +51,23 @@ const SwiperListItems: React.FC<SwiperListItemsProps> = ({ id, category, type, s
                 </div>
             ) : (
                 <Swiper
-                        grabCursor={true}
-                        slidesPerView={"auto"}
-                        spaceBetween={20}
-                        className="movie-list-swiper"
-                    >
-                        {items && items.length > 0
-                            ? items.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <SwiperListItem item={item} category={category} />
-                                </SwiperSlide>
-                            ))
-                            : ""}
-                    </Swiper>
+                    grabCursor={true}
+                    slidesPerView={"auto"}
+                    spaceBetween={20}
+                    className="movie-list-swiper"
+                >
+                    {items && items.length > 0
+                        ? items.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <SwiperListItem item={item} category={category} />
+                            </SwiperSlide>
+                        ))
+                        : (
+                            <p className="text-gray-300 text-lg">
+                                No items found
+                            </p>
+                        )}
+                </Swiper>
             )}
         </div>
     );

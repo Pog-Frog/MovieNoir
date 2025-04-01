@@ -10,6 +10,7 @@ import { timeFormatter } from "../utils/timeFormatter";
 import Movie from "../interfaces/movie.interface";
 import Series from "../interfaces/series.interface";
 import ItemCast from "../components/item/item_cast";
+import SwiperList from "../components/swiper_list/swiper_list";
 
 const DetailsPage = () => {
     const navigate = useNavigate();
@@ -140,6 +141,15 @@ const DetailsPage = () => {
                                     </div>
                                 </div>
                             )}
+                            <div className="flex flex-col gap-5">
+                                <SwiperList
+                                    title={`Similar ${category === "movie" ? "Movies" : "TV Shows"
+                                        }`}
+                                    category={category!}
+                                    type="similar"
+                                    id={item?.id}
+                                />
+                            </div>
                         </div>
                     </div>
                 </>
