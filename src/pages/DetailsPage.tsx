@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useItem from "../hooks/useItem";
 import { CategoriesTypes } from "../types/category.type";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -14,6 +14,7 @@ import ItemCast from "../components/item/item_cast";
 const DetailsPage = () => {
     const navigate = useNavigate();
     const { category, id } = useParams<{ category: CategoriesTypes; id: string }>();
+    const [videoSRC, setVideoSRC] = useState<string | undefined>(undefined);
 
     useEffect(() => {
         if (!category || !id) {
@@ -23,12 +24,18 @@ const DetailsPage = () => {
     }, [category, id, navigate]);
 
     const { data: item, isLoading, error } = useItem(category as CategoriesTypes, parseInt(id as string));
+    const { data: item_trailer, isLoading: isLoading_trailer } = useItem(category as CategoriesTypes, parseInt(id as string), "trailer");
 
     useEffect(() => {
         if (error) {
             navigate("/error");
         }
-    }, [error, navigate]);
+
+        if (!isLoading_trailer && item_trailer && 'results' in item_trailer && Array.isArray(item_trailer.results) && item_trailer.results.length > 0) {
+            setVideoSRC(`https://www.youtube.com/embed/${item_trailer.results[0].key}`);
+        }
+
+    }, [error, isLoading_trailer, item_trailer, navigate]);
 
 
     return (
@@ -54,8 +61,8 @@ const DetailsPage = () => {
                             </div>
                         </div>
 
-                        <div className="page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
-                            <div className="absolute z-30 top-[30vh] md:top-[20vh] left-0 right-0 flex flex-row justify-center gap-10">
+                        <div className="absolute z-30 top-[30vh] md:top-[20vh] left-0 right-0 page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
+                            <div className=" flex flex-row justify-center gap-10">
                                 <img src={config.originalImage(item?.poster_path || item?.backdrop_path || "")}
                                     alt={item?.title || item?.name}
                                     className="h-[480px] w-[300px] hidden lg:block bg-contain bg-no-repeat rounded-lg" />
@@ -121,6 +128,18 @@ const DetailsPage = () => {
                                     </div>
                                 </div>
                             </div>
+                            {videoSRC && (
+                                <div className="flex flex-col items-center justify-center">
+                                    <div className="max-w-5xl w-full">
+                                        <iframe
+                                            src={videoSRC}
+                                            className="aspect-video"
+                                            width="100%"
+                                            title="video"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </>
