@@ -55,7 +55,7 @@ const DetailsPage = () => {
                         </div>
 
                         <div className="page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
-                            <div className="absolute z-30 top-[40vh] left-0 right-0 flex flex-row justify-center gap-10">
+                            <div className="absolute z-30 top-[30vh] md:top-[20vh] left-0 right-0 flex flex-row justify-center gap-10">
                                 <img src={config.originalImage(item?.poster_path || item?.backdrop_path || "")}
                                     alt={item?.title || item?.name}
                                     className="h-[480px] w-[300px] hidden lg:block bg-contain bg-no-repeat rounded-lg" />
