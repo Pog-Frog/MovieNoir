@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.7",
     "axios": "^1.8.3",
     "hamburger-react": "^2.5.2",
+    "intl": "^1.2.5",
     "query-string": "^9.1.1",
     "react": "^19.0.0",
     "react-circular-progressbar": "^2.2.0",
