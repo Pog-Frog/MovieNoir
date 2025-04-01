@@ -11,8 +11,11 @@ export default interface Series {
     genres: genre[];
     overview: string;
     first_air_date: string;
+    release_date: string;
     status: string;
     tagline: string;
     vote_average: number;
     name: string;
+    title: string;
+    seasons?: number;
 };

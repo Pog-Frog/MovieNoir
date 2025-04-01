@@ -11,8 +11,11 @@ export default interface Movie {
     genres: genre[];
     overview: string;
     release_date: string;
+    first_air_date: string;
     status: string;
     tagline: string;
     vote_average: number;
     title: string;
+    name: string;
+    runtime?: number;
 }
