@@ -5,17 +5,27 @@ import { CategoriesTypes } from '../types/category.type';
 import Movie from '../interfaces/movie.interface';
 import Series from '../interfaces/series.interface';
 
-const useItem = (category: CategoriesTypes, id: number) => {
+type ItemOption = "similar" | "";
+
+const useItem = (category: CategoriesTypes, id: number, options: ItemOption = "") => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);
-    
+
     let url: string = '';
-    
+
     if (category === "movie") {
-        url = `${config.baseUrl}movie/${id}?api_key=${config.apiKey}`;
+        if (options === "similar") {
+            url = `${config.baseUrl}movie/${id}/similar?api_key=${config.apiKey}`;
+        } else {
+            url = `${config.baseUrl}movie/${id}?api_key=${config.apiKey}`;
+        }
     } else {
-        url = `${config.baseUrl}tv/${id}?api_key=${config.apiKey}`;
+        if (options === "similar") {
+            url = `${config.baseUrl}tv/${id}/similar?api_key=${config.apiKey}`;
+        } else {
+            url = `${config.baseUrl}tv/${id}?api_key=${config.apiKey}`;
+        }
     }
-    
+
     const { data, error, isLoading, mutate } = useSWR<Movie | Series>(url, fetcher);
 
     return {
