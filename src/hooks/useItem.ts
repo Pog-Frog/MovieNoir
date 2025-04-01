@@ -5,7 +5,7 @@ import { CategoriesTypes } from '../types/category.type';
 import Movie from '../interfaces/movie.interface';
 import Series from '../interfaces/series.interface';
 
-type ItemOption = "similar" | "";
+type ItemOption = "similar" | "trailer" | "";
 
 const useItem = (category: CategoriesTypes, id: number, options: ItemOption = "") => {
     const fetcher = async (url: string) => axios.get(url).then(res => res.data);
@@ -15,12 +15,16 @@ const useItem = (category: CategoriesTypes, id: number, options: ItemOption = ""
     if (category === "movie") {
         if (options === "similar") {
             url = `${config.baseUrl}movie/${id}/similar?api_key=${config.apiKey}`;
+        } else if (options === "trailer") {
+            url = `${config.baseUrl}movie/${id}/videos?api_key=${config.apiKey}`;
         } else {
             url = `${config.baseUrl}movie/${id}?api_key=${config.apiKey}`;
         }
     } else {
         if (options === "similar") {
             url = `${config.baseUrl}tv/${id}/similar?api_key=${config.apiKey}`;
+        } else if (options === "trailer") {
+            url = `${config.baseUrl}tv/${id}/videos?api_key=${config.apiKey}`;
         } else {
             url = `${config.baseUrl}tv/${id}?api_key=${config.apiKey}`;
         }
