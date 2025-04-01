@@ -119,7 +119,7 @@ const DetailsPage = () => {
                                                     ) : (
                                                         <div className="flex flex-row gap-2">
                                                             <p className="text-lg text-white font-medium">Seasons:</p>
-                                                            <p className="text-lg text-gray-300">{(item as Series)?.seasons}</p>
+                                                            <p className="text-lg text-gray-300">{(item as Series)?.seasons?.length}</p>
                                                         </div>
                                                     )
                                                 }

@@ -17,5 +17,5 @@ export default interface Series {
     vote_average: number;
     name: string;
     title: string;
-    seasons?: number;
+    seasons?: [];
 };
