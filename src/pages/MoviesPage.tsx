@@ -39,7 +39,7 @@ const MoviesPage = () => {
 
     useEffect(() => {
         if (error) {
-            // navigate("/error");
+            navigate("/error");
         }
 
         if (data) {
