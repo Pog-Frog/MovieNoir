@@ -13,11 +13,11 @@ const Header = () => {
         },
         {
             text: "Movies",
-            link: "/movies"
+            link: "/movies/popular"
         },
         {
             text: "TV Series",
-            link: "/tv-series"
+            link: "/tv-series/popular"
         }
     ]
 
