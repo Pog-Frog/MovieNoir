@@ -90,7 +90,7 @@ const TVPage = () => {
         <>
             <div className="h-[65vh] bg-cover bg-center relative"
                 style={{
-                    backgroundImage: `url(${config.originalImage("/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg")})`
+                    backgroundImage: `url(${config.originalImage("/9faGSFi5jam6pDWGNd0p8JcJgXQ.jpg")})`
                 }}>
                 {/* Overlay */}
                 <div className="absolute inset-0 z-20 w-full bg-black/75"></div>
