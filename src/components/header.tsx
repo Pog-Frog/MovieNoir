@@ -45,7 +45,7 @@ const Header = () => {
     }
 
     return (
-        <div className={`sticky top-0 left-0 right-0 z-50 w-full px-4 py-4 md:py-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 bg-opacity-0 transition-all duration-300 ${shrinkHeader}`}>
+        <div className={`sticky top-0 left-0 right-0 z-50 w-full px-4 py-2 md:py-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 bg-opacity-0 transition-all duration-300 ${shrinkHeader}`}>
             <div className="mx-auto flex h-full max-w-screen-2xl items-center justify-between">
                 {/* Logo */}
                 <Link
