@@ -11,7 +11,7 @@ import { SeriesOption, useSeriesInfiniteScroll } from "../hooks/useSeries";
 import Series from "../interfaces/series.interface";
 
 const TVPage = () => {
-    const { option = "popular" } = useParams();
+    const { option } = useParams();
     const navigate = useNavigate();
     const [series, setSeries] = useState<Series[]>([]);
     const [query, setQuery] = useState<string>("");

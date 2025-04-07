@@ -11,7 +11,7 @@ import CardSkeleton from "../components/card_skeleton/card_skeleton";
 import GridItem from "../components/grid_item";
 
 const MoviesPage = () => {
-    const { option = "popular" } = useParams();
+    const { option } = useParams();
     const navigate = useNavigate();
     const [movies, setMovies] = useState<Movie[]>([]);
     const [query, setQuery] = useState<string>("");
