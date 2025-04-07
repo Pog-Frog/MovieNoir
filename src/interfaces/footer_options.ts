@@ -54,8 +54,24 @@ export const FooterTVList: ListType[] = [
     },
 ]
 
+export const FooterProvidersList: ListType[] = [
+    {
+        id: 1,
+        text: "Movies",
+        path: "/providers/movie",
+        value: "movie",
+    },
+    {
+        id: 2,
+        text: "TV Series",
+        path: "/providers/tv",
+        value: "tv",
+    },
+]
+
 interface ListType {
     id: number;
     text: string;
     path: string;
+    value?: string;
 }
