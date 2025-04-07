@@ -5,6 +5,7 @@ import ErrorPage from './pages/ErrorPage'
 import DetailsPage from './pages/DetailsPage'
 import MoviesPage from './pages/MoviesPage'
 import TVPage from './pages/TVPage'
+import ProvidersPage from './pages/ProvidersPage'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/movies/:option" element={<MoviesPage />} />
           <Route path="/tv-series/:option" element={<TVPage />} />
           <Route path="/:category/:id" element={<DetailsPage />} />
+          <Route path="/providers/:category" element={<ProvidersPage />} />
         </Route>
       </Routes>
     </>
