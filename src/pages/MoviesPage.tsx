@@ -138,14 +138,14 @@ const MoviesPage = () => {
                         }
                         className="flex flex-row flex-wrap gap-8"
                     >
-                        <div
-                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
+                        <div className="flex flex-wrap gap-3 justify-center">
                             {movies.map((movie) => (
-                                <GridItem
-                                    key={`${movie.id}-${movie.original_title}`}
-                                    item={movie}
-                                    category="movie"
-                                />
+                                <div className="flex-grow-0 flex-shrink-0 basis-[160px]" key={movie.id}>
+                                    <GridItem
+                                        item={movie}
+                                        category="movie"
+                                    />
+                                </div>
                             ))}
                         </div>
                     </InfiniteScroll>

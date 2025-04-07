@@ -56,8 +56,8 @@ const TVPage = () => {
             } else {
                 setSeries(prev => {
                     const existingIds = new Set(prev.map(m => m.id));
-                    const uniqueNewMovies = newSeries.filter(series => !existingIds.has(series.id));
-                    return [...prev, ...uniqueNewMovies];
+                    const uniqueNewSeries = newSeries.filter(series => !existingIds.has(series.id));
+                    return [...prev, ...uniqueNewSeries];
                 });
             }
         }
@@ -138,20 +138,20 @@ const TVPage = () => {
                         }
                         className="flex flex-row flex-wrap gap-8"
                     >
-                        <div
-                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
+                        <div className="flex flex-wrap gap-3 justify-center">
                             {series.map((series) => (
-                                <GridItem
-                                    key={series.id}
-                                    item={series}
-                                    category="tv"
-                                />
+                                <div className="flex-grow-0 flex-shrink-0 basis-[160px]" key={series.id}>
+                                    <GridItem
+                                        item={series}
+                                        category="tv"
+                                    />
+                                </div>
                             ))}
                         </div>
                     </InfiniteScroll>
                 ) : (
                     <p className="text-xl text-gray-300">
-                        {query ? "Couldn't find anything related to your search query." : "No movies found."}
+                        {query ? "Couldn't find anything related to your search query." : "No series found."}
                     </p>
                 )}
             </div>
