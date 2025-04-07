@@ -48,25 +48,31 @@ const DetailsPage = () => {
             ) : (
                 <>
                     <div className="relative">
-
-                        <div className="h-[65vh] bg-cover bg-center relative"
+                        {/* Background image section */}
+                        <div
+                            className="h-[65vh] bg-cover bg-center relative"
                             style={{
                                 backgroundImage: item?.backdrop_path || item?.poster_path ?
                                     `url(${config.originalImage(item?.backdrop_path || item?.poster_path)})` : ""
-                            }}>
+                            }}
+                        >
                             {/* Overlay */}
                             <div className="absolute inset-0 z-20 w-full bg-black/10"></div>
                             {/* Gradient overlay */}
-                            <div className="absolute inset-0 z-10 w-full h-full"
-                                style={{ backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)" }}>
+                            <div
+                                className="absolute inset-0 z-10 w-full h-full"
+                                style={{ backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)" }}
+                            >
                             </div>
                         </div>
 
-                        <div className="absolute z-30 top-[30vh] md:top-[20vh] left-0 right-0 page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
-                            <div className=" flex flex-row justify-center gap-10">
-                                <img src={config.originalImage(item?.poster_path || item?.backdrop_path || "")}
+                        <div className="relative z-30 -mt-[35vh] md:-mt-[45vh] page-container py-6 md:py-12 flex flex-col gap-8 md:gap-14">
+                            <div className="flex flex-row justify-center gap-10">
+                                <img
+                                    src={config.originalImage(item?.poster_path || item?.backdrop_path || "")}
                                     alt={item?.title || item?.name}
-                                    className="h-[480px] w-[300px] hidden lg:block bg-contain bg-no-repeat rounded-lg" />
+                                    className="h-[480px] w-[300px] hidden lg:block bg-contain bg-no-repeat rounded-lg"
+                                />
 
                                 <div className="max-w-4xl flex flex-col gap-8 min-w-[55%] px-12">
                                     <div className="flex flex-col gap-5">
@@ -129,6 +135,7 @@ const DetailsPage = () => {
                                     </div>
                                 </div>
                             </div>
+
                             {videoSRC && (
                                 <div className="flex flex-col items-center justify-center">
                                     <div className="max-w-5xl w-full">
@@ -141,10 +148,10 @@ const DetailsPage = () => {
                                     </div>
                                 </div>
                             )}
+
                             <div className="flex flex-col gap-5">
                                 <SwiperList
-                                    title={`Similar ${category === "movie" ? "Movies" : "TV Shows"
-                                        }`}
+                                    title={`Similar ${category === "movie" ? "Movies" : "TV Shows"}`}
                                     category={category!}
                                     type="similar"
                                     id={item?.id}
