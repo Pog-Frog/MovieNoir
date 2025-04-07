@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import {useEffect, useState} from "react";
+import {Link, useNavigate, useParams} from "react-router";
 import config from "../api/config";
-import { ClipLoader } from "react-spinners";
-import { FooterTVList as ListingOptions } from "../interfaces/footer_options";
+import {ClipLoader} from "react-spinners";
+import {FooterTVList as ListingOptions} from "../interfaces/footer_options";
 import SearchBar from "../components/search_bar/search_bar";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CardSkeleton from "../components/card_skeleton/card_skeleton";
 import GridItem from "../components/grid_item";
-import { SeriesOption, useSeriesInfiniteScroll } from "../hooks/useSeries";
+import {SeriesOption, useSeriesInfiniteScroll} from "../hooks/useSeries";
 import Series from "../interfaces/series.interface";
 
 const TVPage = () => {
-    const { option } = useParams();
+    const {option} = useParams();
     const navigate = useNavigate();
     const [series, setSeries] = useState<Series[]>([]);
     const [query, setQuery] = useState<string>("");
@@ -27,9 +27,9 @@ const TVPage = () => {
     useEffect(() => {
         setSeries([]);
         setQuery("");
-    }, [option]);;
+    }, [option]);
 
-    const { data, error, isLoading, size, setSize } = useSeriesInfiniteScroll(option as SeriesOption, query);
+    const {data, error, isLoading, size, setSize} = useSeriesInfiniteScroll(option as SeriesOption, query);
 
     const fetchMoreData = () => {
         setSize(size + 1);
@@ -81,7 +81,7 @@ const TVPage = () => {
     if (!query && isLoading) {
         return (
             <div className="flex justify-center items-center min-h-[80vh]">
-                <ClipLoader color="#ffffff" loading={true} size={130} />
+                <ClipLoader color="#ffffff" loading={true} size={130}/>
             </div>
         );
     }
@@ -89,14 +89,14 @@ const TVPage = () => {
     return (
         <>
             <div className="h-[65vh] bg-cover bg-center relative"
-                style={{
-                    backgroundImage: `url(${config.originalImage("/9faGSFi5jam6pDWGNd0p8JcJgXQ.jpg")})`
-                }}>
+                 style={{
+                     backgroundImage: `url(${config.originalImage("/9faGSFi5jam6pDWGNd0p8JcJgXQ.jpg")})`
+                 }}>
                 {/* Overlay */}
                 <div className="absolute inset-0 z-20 w-full bg-black/75"></div>
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 z-10 w-full h-full"
-                    style={{ backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)" }}>
+                     style={{backgroundImage: "linear-gradient(to top, #0f0f0f, #00000000)"}}>
                 </div>
             </div>
             <div className="page-container relative z-20 -mt-[50vh] pb-6 md:py-12 flex flex-col gap-6 md:gap-10">
@@ -111,7 +111,7 @@ const TVPage = () => {
                                 className={`transition duration-300 ${isActiveLink(item.text)
                                     ? "text-indigo-500"
                                     : "hover:text-indigo-500"
-                                    }`}
+                                }`}
                             >
                                 <Link to={item.path}>{item.text}</Link>
                             </li>
@@ -133,18 +133,21 @@ const TVPage = () => {
                         hasMore={!!hasMore}
                         loader={
                             <div className="flex flex-row flex-wrap gap-8">
-                                <CardSkeleton repeat={6} />
+                                <CardSkeleton repeat={6}/>
                             </div>
                         }
                         className="flex flex-row flex-wrap gap-8"
                     >
-                        {series.map((series) => (
-                            <GridItem
-                                key={series.id}
-                                item={series}
-                                category="tv"
-                            />
-                        ))}
+                        <div
+                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
+                            {series.map((series) => (
+                                <GridItem
+                                    key={series.id}
+                                    item={series}
+                                    category="tv"
+                                />
+                            ))}
+                        </div>
                     </InfiniteScroll>
                 ) : (
                     <p className="text-xl text-gray-300">
