@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# MovieNoir 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieNoir is a sleek React application designed for discovering movies and TV shows. Built with modern web technologies, it leverages the TMDB (The Movie Database) API to provide up-to-date information, ratings, trailers, and more.
+## ✨ What MovieNoir Offers
 
-Currently, two official plugins are available:
+*   **Dynamic Home Feed:** A central hub featuring a prominent slider showcasing the 5 most popular current movies. It also provides instant access to organized lists highlighting top-rated films and widely-watched TV series.
+*   **Comprehensive Information View:** Selecting any title reveals a detailed breakdown: its narrative overview, memorable tagline, user rating, runtime, premiere date, current status (Released, Ended, etc.), key cast members, and an integrated video trailer. TV shows include relevant season details.
+*   **Focused Exploration Sections:** Dedicated pages allow users to browse movies or TV series independently. Utilize the search function to find specific entries or apply filters like 'Top Rated' and 'Popular' to sort the catalogs.
+*   **Viewing Options Guide:** A practical 'Providers' page lists the leading 50 platforms (streaming services, rental/purchase options) where a selected movie or TV show is available, based on TMDB's regional data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+*   **React (v19):** Core UI library.
+*   **React Router:** For handling client-side routing and navigation between pages.
+*   **TypeScript:** For static typing, enhancing code quality and developer experience.
+*   **Tailwind CSS:** Utility-first CSS framework for rapid UI development.
+*   **TMDB API:** Source for all movie and TV show data.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+*   Node.js
+*   npm
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Pog-Frog/MovieNoir.git
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd MovieNoir
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+  
+4.  **Set up environment variables:**
+    *   Create a `.env` file in the root of the project.
+    *   Add your TMDB API key to the `.env` file. 
+    
+        ```env
+        VITE_TMDB_API_KEY=your_actual_tmdb_api_key_here
+        ```
+
+### Usage
+
+1.  **Start the development server:**
+   
+    ```bash
+    npm run dev
+    ```
+2.  **Open your browser:**
+    Navigate to `http://localhost:3000` 
